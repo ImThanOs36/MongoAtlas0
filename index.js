@@ -27,7 +27,6 @@ app.get("/", async (req, res) => {
 });
 app.post("/add", async (req, res) => {
     let name = req.body.name;
-
     const newUser = await new User({ name: "ThanOs" });
     newUser.save();
     res.json("user created..");
