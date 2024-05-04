@@ -22,7 +22,7 @@ if (cnx) {
 }
 
 app.get("/", async (req, res) => {
-    let data = await User.find({ name: "ThanOs" });
+    let data = await User.find({});
     res.json({ msg: "Working Properly", name: data });
 });
 app.post("/add", async (req, res) => {
