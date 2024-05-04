@@ -1,7 +1,10 @@
 const express = require("express");
 const app = express();
 const cors = require('cors')
-app.use(express.json(),cors());
+app.use(express.json(),cors({
+    origin:"https://mongo-atlas0.vercel.app",
+    methods: ["GET","POST","PUT","DELETE"],
+}));
 const mongoose = require("mongoose");
 const { model, Schema } = mongoose;
 const dotenv = require('dotenv');
