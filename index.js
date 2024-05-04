@@ -22,14 +22,14 @@ if (cnx) {
 }
 
 app.get("/", async (req, res) => {
-    let data = await User.find({});
+    let data = await User.find({}).limit(20);
     res.json({ msg: "Working Properly", name: data });
 });
 app.post("/add", async (req, res) => {
     let name = req.body.name;
     const newUser = await new User({ name: name });
     newUser.save();
-    let data = await User.find({})
+    let data = await User.find({}).limit(20)
     res.json({name:data});
 });
 app.put("/modify", async (req, res) => {
