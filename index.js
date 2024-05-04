@@ -29,7 +29,7 @@ app.post("/add", async (req, res) => {
     let name = req.body.name;
     const newUser = await new User({ name: name });
     newUser.save();
-    res.json("user created..");
+    res.json({newUser});
 });
 app.put("/modify", async (req, res) => {
     let target = await User.findOne({ name: req.body.name });
